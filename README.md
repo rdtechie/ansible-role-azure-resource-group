@@ -1,7 +1,5 @@
 # Ansible Role: az_resource_group
 
-[![Build Status](https://travis-ci.org/geerlingguy/ansible-role-java.svg?branch=master)](https://travis-ci.org/geerlingguy/ansible-role-java)
-
 Creates or Deletes an Azure Resource Group. This role has been made specifically to be used in CI/CD pipelines, hence the usage of a vault file.
 
 ## Requirements
