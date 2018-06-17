@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: Richard Diphoorn
+  description: This role expands on the official Azure Resource Group module.
+               It includes a method to add multiple tags to a resource group and it makes use of a vault file, to authenticate against Azure.
+  company: rdtechie
+  license: MIT
+  min_ansible_version: 2.5
+  galaxy_tags:
+    - Azure
+    - Resource Group
+    - Microsoft
+dependencies:
+  - { role: Azure.azure_preview_modules }
+...

@@ -1,0 +1,16 @@
+---
+- name: Create Azure Resource Group
+  azure_rm_resourcegroup:
+    name: "{{ az_resource_group_name }}"
+    location: "{{ az_resource_group_location }}"
+    state: "{{ az_resource_group_state }}"
+    force: "{{ az_resource_group_force_removal }}"
+    tenant: "{{ azure_tenant_id }}"
+    subscription_id: "{{ azure_subscription_id }}"
+    client_id: "{{ azure_client_id }}"
+    secret: "{{ azure_client_secret }}"
+    tags: 
+      Owner: "{{ item.Owner }}"
+      Company: "{{ item.Company }}"
+      Project: "{{ item.Project }}"
+  with_items: "{{ azure_tags }}"
