@@ -8,20 +8,5 @@
     - ./vars/vars.yml
   roles:
     - { role: Azure.azure_preview_modules }
-    - { role: az_resource_group, tags: [ 'CreateResourceGroup' ]  }
-  tags:
-    - CreateResourceGroup
-
-- name: Remove Azure Resource Group
-  hosts: localhost
-  connection: local
-  gather_facts: false
-  vars_files:
-    - ./vars/vault.yml
-    - ./vars/vars.yml
-  roles:
-    - { role: Azure.azure_preview_modules }
-    - { role: az_resource_group, tags: [ 'never', 'RemoveResourceGroup' ] }
-  tags:
-    - RemoveResourceGroup
+    - { role: az_create_resource_group  }
 ...

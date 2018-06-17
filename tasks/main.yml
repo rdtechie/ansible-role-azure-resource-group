@@ -3,8 +3,7 @@
   azure_rm_resourcegroup:
     name: "{{ az_resource_group_name }}"
     location: "{{ az_resource_group_location }}"
-    state: "{{ az_resource_group_state }}"
-    force: "{{ az_resource_group_force_removal }}"
+    state: "present"
     tenant: "{{ azure_tenant_id }}"
     subscription_id: "{{ azure_subscription_id }}"
     client_id: "{{ azure_client_id }}"
@@ -14,3 +13,9 @@
       Company: "{{ item.Company }}"
       Project: "{{ item.Project }}"
   with_items: "{{ azure_tags }}"
+  register: CreatedResourceGroup
+
+- name: Displaying Results when the state has been changed
+  debug:
+    msg: "Created or Modified Resource Group {{ CreatedResourceGroup.results[0].state.name }}"
+  when: CreatedResourceGroup.changed

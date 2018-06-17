@@ -5,4 +5,4 @@ azure_subscription_id: "{{ vault_azure_subscription_id }}" # This value will be 
 azure_client_id: "{{ vault_azure_client_id }}" # This value will be retrieved from the vault file in vars/vault.yml
 azure_client_secret: "{{ vault_azure_client_secret }}" # This value will be retrieved from the vault file in vars/vault.yml
 azure_tags: # This example list consists of three tags that will be set on the Resource Group; Owner, Company and Project.
-  - { Owner: "Homer Simpson", Company: "Duff Beer", Project: "Springfield" }
+  - { Owner: "Homer Simpson", Company: "Moe's Bar", Project: "Springfield" }
