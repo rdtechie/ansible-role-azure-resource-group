@@ -1,7 +1,5 @@
 az_resource_group_name: "testrg01" # Name of the Resource Group.
 az_resource_group_location: "westeurope" # This corresponds to the options that Microsoft is giving.
-az_resource_group_state: "present" # present | absent # When using present, set az_resource_group_force_removal to "false".
-az_resource_group_force_removal: "true" # true | false
 azure_tenant_id: "{{ vault_azure_tenant_id }}" # This value will be retrieved from the vault file in vars/vault.yml
 azure_subscription_id: "{{ vault_azure_subscription_id }}" # This value will be retrieved from the vault file in vars/vault.yml
 azure_client_id: "{{ vault_azure_client_id }}" # This value will be retrieved from the vault file in vars/vault.yml

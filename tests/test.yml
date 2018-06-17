@@ -1,13 +1,27 @@
 ---
-- name: (De)commissioning Azure Resource Group
+- name: Create Azure Resource Group
   hosts: localhost
   connection: local
   gather_facts: false
   vars_files:
     - ./vars/vault.yml
     - ./vars/vars.yml
-  
   roles:
     - { role: Azure.azure_preview_modules }
-    - { role: az_resource_group }
+    - { role: az_resource_group, tags: [ 'CreateResourceGroup' ]  }
+  tags:
+    - CreateResourceGroup
+
+- name: Remove Azure Resource Group
+  hosts: localhost
+  connection: local
+  gather_facts: false
+  vars_files:
+    - ./vars/vault.yml
+    - ./vars/vars.yml
+  roles:
+    - { role: Azure.azure_preview_modules }
+    - { role: az_resource_group, tags: [ 'never', 'RemoveResourceGroup' ] }
+  tags:
+    - RemoveResourceGroup
 ...
