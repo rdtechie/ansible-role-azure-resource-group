@@ -8,7 +8,6 @@ galaxy_info:
   min_ansible_version: 2.5
   galaxy_tags:
     - Azure
-    - "Resource Group"
     - Microsoft
 dependencies:
   - { role: Azure.azure_preview_modules }
