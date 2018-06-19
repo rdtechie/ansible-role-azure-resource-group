@@ -1,12 +1,10 @@
 ---
-- name: Create Azure Resource Group
+- name: Create Name for a Azure Resource Group
   hosts: localhost
   connection: local
   gather_facts: false
   vars_files:
-    - ./vars/vault.yml
     - ./vars/vars.yml
   roles:
-    - { role: Azure.azure_preview_modules }
-    - { role: az_create_resource_group  }
+    - { role: ../../ansible_role_naming_convention }
 ...
