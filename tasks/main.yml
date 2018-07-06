@@ -6,7 +6,7 @@
 
 - name: Create Azure Resource Group
   azure_rm_resourcegroup:
-    name: "{{ az_resource_group_name_business_application }}"
+    name: "{{ az_resource_group_name }}"
     location: "{{ az_resource_group_location }}"
     state: "present"
     tenant: "{{ azure_tenant_id }}"
