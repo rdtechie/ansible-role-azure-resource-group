@@ -1,5 +1,5 @@
 ---
-- name: Create Azure Resource Group
+- name: Ensure Azure Resource Group Exists
   azure_rm_resourcegroup:
     name: "{{ az_resource_group_name }}"
     location: "{{ az_resource_group_location }}"
