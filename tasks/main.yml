@@ -1,9 +1,4 @@
 ---
-- name: Set Azure Tags
-  set_fact: 
-    az_tags_dict: "{{ (az_tags_dict|default({}))|combine({item.key: item.value}) }}"
-  loop: "{{ azure_tags|dict2items }}"
-
 - name: Create Azure Resource Group
   azure_rm_resourcegroup:
     name: "{{ az_resource_group_name }}"
@@ -14,5 +9,4 @@
     client_id: "{{ azure_client_id }}"
     secret: "{{ azure_client_secret }}"
     tags: "{{ az_tags_dict }}"
-  register: CreatedResourceGroup
 ...
